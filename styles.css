@@ -1,0 +1,116 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow: hidden; /* Evita barras de desplazamiento */
+    font-family: 'Arial', sans-serif;
+}
+
+#card-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    width: 150px;
+    height: 200px;
+    position: absolute;
+    perspective: 1000px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out, z-index 0.5s;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Asegura que las cartas no se superpongan inicialmente */
+}
+
+.card.flipped {
+    transform: rotateY(180deg); /* Gira la carta 180 grados */
+    z-index: 10; /* Cuando se gira, la carta se coloca encima */
+}
+
+.card .front, .card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Oculta la parte trasera cuando está girada */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Evita barras de desplazamiento */
+}
+
+.card .front {
+    background: #fff;
+    color: #e74c3c;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card .back {
+    background: #fff;
+    color: #34495e;
+    transform: rotateY(180deg); /* La parte trasera comienza girada */
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: 'Georgia', serif; /* Letra más elegante */
+}
+
+/* Carta Final Grande */
+#final-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: auto;
+    max-height: 80vh;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    color: #000; /* Texto en negro */
+    z-index: 100; /* Asegura que esté encima de todo */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    overflow-y: auto; /* Permite desplazamiento si el texto es largo */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#final-card.hidden {
+    display: none;
+}
+
+#final-card.visible {
+    opacity: 1;
+}
+
+#final-card .front {
+    text-align: center;
+}
+
+#final-card .front p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#final-card .front .big-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+}
