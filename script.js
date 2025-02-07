@@ -5,7 +5,7 @@ const messages = [
     "Cada día contigo es un regalo.",
     "Mi corazón late por ti.",
     "Eres mi razón de sonreír.",
-    "Te amo más que a las estrellas.",
+    "Te amo más que a los dinosaurios.",
     "Tu amor ilumina mi vida.",
     "Eres mi mayor felicidad.",
     "Contigo todo es perfecto.",
@@ -16,10 +16,10 @@ const messages = [
     "Eres mi alma gemela.",
     "Mi mundo gira alrededor de ti.",
     "Te amo con todo mi corazón.",
-    "Eres mi mejor decisión.",
-    "Con tu amor soy invencible.",
+    "Eres el milagro que siempre pedi.",
+    "Me inspiras cada dia a ser mucho mejor.",
     "Eres mi eterno amor.",
-    "Nunca te dejaré ir."
+    "Que nunca me falta tu amor."
 ];
 
 // Generar cartas sin solapamiento
